@@ -31,3 +31,7 @@ Version 2.1 keeps the cantrip interface and does these jobs:
   save.
 - Keeps Boosted as a separate card. The player still chooses when to spend the
   wand's once-per-round extra energy.
+
+## Get help
+
+[Get Help](https://github.com/Spazzletopia-Studios/spazzmods-support) — report a bug, get install help, ask a question, or suggest an idea.
