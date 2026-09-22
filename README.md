@@ -30,7 +30,7 @@ Version 2.1 keeps the cantrip interface and does these jobs:
 - Applies the Adept/Paragon Fire, Cold, and Electricity rider after a failed
   save.
 - Keeps Boosted as a separate card. The player still chooses when to spend the
-  wand's once-per-round extra energy.
+wand's once-per-round extra energy.
 
 ## Get help
 
