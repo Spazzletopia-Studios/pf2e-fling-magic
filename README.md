@@ -1,37 +1,49 @@
 # PF2e Fling Magic
 
-This module gives Fling Magic its own castable spell cards. This is useful
-because the PF2e Actions tab cannot run a normal spell save and damage flow.
+## Purpose and features
 
-## Use
+Fling Magic adds castable spell cards for the Thaumaturge's Fling Magic ability. It provides normal and Boosted cantrips with only the elements the character has earned, and applies the Adept or Paragon elemental rider after a failed save.
 
-On a Thaumaturge with Fling Magic, click <strong>Configure Fling Magic</strong>
-in the character-sheet header. Select one element at 1st level, two at 7th,
-and all three at 17th. Then select <strong>Save and Install Cards</strong>.
+## Setup
 
-The module makes a small Fling Magic Innate Spells entry when the actor does
-not already have one, then adds the correct normal and Boosted cards there.
-Their element selector contains only the elements that actor earned.
-Cast them like any other cantrip. Foundry rolls the basic Reflex save and
-elemental damage from the spell card. On a failed save at Adept or Paragon,
-it also applies the correct Fire, Cold, or Electricity rider.
+The manifest supports Foundry VTT 12 or later and PF2e 6.0.0 or later; it was verified on Foundry VTT 14 with PF2e 8.5.0.
 
-The Fling Magic entry uses the Thaumaturge class DC. If a target rerolls its
-save, the final kept result replaces the first elemental rider.
-Riders use the tier saved on the cast card, so leveling up cannot strengthen an
-old card before the new cards are installed.
+This is a free module. Install it with the [SpazzMods Installer](https://github.com/Spazzletopia-Studios/spazzmods-installer/releases/latest), or use the [public GitHub release](https://github.com/Spazzletopia-Studios/pf2e-fling-magic/releases/latest). Enable **PF2e Fling Magic** in Manage Modules.
 
-## What changed from version 1
+## Quick start
 
-Version 2.1 keeps the cantrip interface and does these jobs:
+1. Open an eligible Thaumaturge character sheet.
+2. With Hub enabled, open the SpazzMods dropdown in the sheet header and choose **Configure Fling Magic**. Without Hub, use the original **Configure Fling Magic** header action.
+3. Choose the number of elements shown for the character's level: one at level 1, two at level 7, or three at level 17.
+4. Choose **Save and Install Cards**.
+5. Cast either Fling Magic cantrip from the character's spell list.
 
-- Limits the spell variant picker to one, two, then three earned elements.
-- Corrects the 3d4/3d6 base damage, rank scaling, and Paragon fire damage.
-- Applies the Adept/Paragon Fire, Cold, and Electricity rider after a failed
-  save.
-- Keeps Boosted as a separate card. The player still chooses when to spend the
-wand's once-per-round extra energy.
+## Detailed use
+
+The module creates a managed innate spellcasting entry if the actor does not already have one. It installs the normal and Boosted Fling Magic cards from its **Fling Magic Cantrips** pack. The cards use the Thaumaturge class DC and PF2e's normal basic Reflex save and damage flow.
+
+A failed save at Adept or Paragon applies the selected element's rider: Fire deals persistent damage, Cold reduces Speed for one round, and Electricity grants its effect for one round. The rider uses the tier stored on the cast card, so leveling up does not change an older card. A rerolled save replaces the earlier rider.
+
+**Boosted** is a separate card. Follow the feat's once-per-round extra-energy rule; the module does not choose when to spend it. If the character levels up or changes their earned elements, run setup again to update the cards.
+
+## Settings
+
+No configurable module settings are registered. Choose the earned elements from **Configure Fling Magic**.
+
+## Limits and recovery
+
+The setup requires the Fling Magic action on a character or a recognized Fling Magic card. If the compendium pack is missing, restart Foundry and try again. The source items and spells remain unchanged; only module-managed Fling Magic cards and their innate entry are maintained.
+
+## Development
+
+The API is `game.pf2eFlingMagic`: `configure(actor)` opens the element setup, `elements(actor)` returns the saved choices, and `tier(actor)` returns the tier for that actor.
+
+The module's source checks are in `harness/`. Run the documented harness commands from that folder. A source gate does not replace an installed Foundry smoke.
+
+## Credits and license
+
+Author: Spazzledorf. MIT License.
 
 ## Get help
 
-[Get Help](https://github.com/Spazzletopia-Studios/spazzmods-support) — report a bug, get install help, ask a question, or suggest an idea.
+[SpazzMods Support](https://github.com/Spazzletopia-Studios/spazzmods-support).
